@@ -1,20 +1,19 @@
-# Automated Testing with Selenium WebDriver
+# 🚀 Automated Testing with Selenium WebDriver
 
 ## 📌 Overview
-This project is a Selenium WebDriver-based automation script designed to test the scheduling and validation of live sessions on the **WISE** platform. The script automates login, navigation, session scheduling, and validation steps.
+This project automates the testing of the **Wise Staging Environment** using **Selenium WebDriver** and **Python**. The script verifies key functionalities such as login, navigation to classrooms, session scheduling, and session validation.
 
-## 🚀 Features
-- Automated login with OTP authentication (mocked for testing purposes).
-- Navigation to the classroom and scheduling a live session.
-- Validation of session details including instructor name, session title, time, and status.
-- Exception handling and logging for debugging.
+## 🎯 Problem Statement
+Automate a critical user flow on the **Wise** platform using Selenium:
+- **Login as a Tutor** using phone number authentication.
+- **Navigate to the Classroom** and verify successful access.
+- **Schedule a Live Session** at 10 PM.
+- **Validate Session Details** on the timeline.
 
-## 🛠️ Tech Stack
-- **Python** (Scripting Language)
-- **Selenium WebDriver** (Automation Framework)
-- **ChromeDriver** (WebDriver for Chrome)
-- **WebDriver Manager** (For handling WebDriver binaries)
-- **Logging** (For test tracking and debugging)
+## ⚙️ Tech Stack
+- **Language**: Python 🐍
+- **Framework**: Selenium WebDriver 🌐
+- **Dependencies**: WebDriver Manager, Logging, PyTest
 
 ## 📂 Project Structure
 ```
@@ -23,40 +22,45 @@ This project is a Selenium WebDriver-based automation script designed to test th
 ├── README.md              # Project documentation
 ```
 
-## 📥 Installation & Setup
+## 🔥 Setup & Execution
 
-### Prerequisites
-Ensure you have the following installed:
-- Python 3.x
-- Google Chrome Browser
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/wise-automation.git
+cd wise-automation
+```
 
-### Install Dependencies
-```bash
+### 2️⃣ Install Dependencies
+```sh
 pip install -r requirements.txt
 ```
 
-## ▶️ Running the Script
-```bash
-python main.py
+### 3️⃣ Run Tests
+```sh
+pytest tests/
 ```
 
-## 🔎 Test Flow
-1. **Login to the WISE platform**
-   - Enters phone number and OTP (mocked for testing).
-   - Asserts institute name visibility.
-2. **Navigate to Group Courses**
-   - Access the classroom section.
-3. **Schedule a Live Session**
-   - Opens scheduling panel and sets session details.
-4. **Validate Session Details**
-   - Checks instructor name, session title, and scheduled time.
+## 🧪 Test Scenarios
+| #  | Test Case                     | Expected Outcome |
+|----|--------------------------------|------------------|
+| ✅ | **Login as Tutor**             | Institute name displayed |
+| ✅ | **Navigate to Classroom**      | Classroom opens successfully |
+| ✅ | **Schedule Live Session**      | Session is scheduled at 10 PM |
+| ✅ | **Validate Session Details**   | Instructor, time, and status are correct |
 
-## 🐞 Troubleshooting
-- If the script fails to find an element, ensure:
-  - The website layout hasn't changed.
-  - Your network connection is stable.
-  - ChromeDriver version is compatible with the installed Chrome browser.
+## ⚠️ Troubleshooting
+- **Session Card Not Found?** Ensure session creation was successful before validating.
+- **Element Not Clickable?** Try adding `time.sleep(2)` before interaction (for debugging only).
+- **WebDriver Issues?** Run `webdriver-manager` to update drivers.
+
+## 📌 Future Enhancements
+- ✅ Implement **headless mode** for CI/CD pipelines.
+- ✅ Add **reporting & logging** for better test insights.
+- ✅ Parameterize tests for **multiple environments**.
 
 ## 📧 Contact
 For any issues or inquiries, feel free to reach out!
+
+
+
 
